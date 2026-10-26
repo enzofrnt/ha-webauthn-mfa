@@ -36,6 +36,7 @@
       "addBtn": "+ Dodaj klucz dostępu",
       "placeholder": "Nazwa (np. Mój iPhone, Bitwarden)",
       "delete": "Usuń",
+      "cancel": "Anuluj",
       "confirmDelete": "Usunąć ten klucz dostępu?",
       "deleted": "✓ Usunięto klucz dostępu.",
       "deleteError": "❌ Nie udało się usunąć klucza dostępu.",

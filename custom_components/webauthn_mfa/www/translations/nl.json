@@ -36,6 +36,7 @@
       "addBtn": "+ Passkey toevoegen",
       "placeholder": "Naam (bijv. Mijn iPhone, Bitwarden)",
       "delete": "Verwijderen",
+      "cancel": "Annuleren",
       "confirmDelete": "Deze passkey verwijderen?",
       "deleted": "✓ Passkey verwijderd.",
       "deleteError": "❌ Verwijderen mislukt.",

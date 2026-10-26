@@ -36,6 +36,7 @@
       "addBtn": "+ Agregar passkey",
       "placeholder": "Nombre (ej: Mi iPhone, Bitwarden)",
       "delete": "Eliminar",
+      "cancel": "Cancelar",
       "confirmDelete": "¿Eliminar esta passkey?",
       "deleted": "✓ Passkey eliminada.",
       "deleteError": "❌ Error al eliminar la passkey.",

@@ -38,8 +38,6 @@ from homeassistant import data_entry_flow
 from homeassistant.components.auth import DOMAIN as AUTH_DOMAIN
 from homeassistant.components.auth import indieauth
 from homeassistant.components.auth.login_flow import LoginFlowIndexView
-from homeassistant.components.frontend import add_extra_js_url
-from homeassistant.components.http import StaticPathConfig
 from homeassistant.components.http.data_validator import RequestDataValidator
 from homeassistant.config_entries import SOURCE_IMPORT, ConfigEntry
 from homeassistant.core import HomeAssistant
@@ -244,14 +242,9 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     www_path = os.path.join(os.path.dirname(__file__), "www")
     await _inject_login_script(hass, www_path)
 
-    # 6. Register the post-login JS (loaded on every HA page after login).
-    webauthn_js = os.path.join(www_path, "webauthn.js")
-    await hass.http.async_register_static_paths(
-        [StaticPathConfig("/webauthn_mfa/webauthn.js", webauthn_js, cache_headers=True)]
-    )
-    add_extra_js_url(hass, "/webauthn_mfa/webauthn.js")
-
-    # 7. Sidebar panel.
+    # 6. Sidebar panel. Passkey management lives in one dedicated surface;
+    #    the former profile-page injection duplicated this UI and bypassed
+    #    Home Assistant's component and translation systems.
     await panel_module.async_setup(hass)
 
     _LOGGER.info("WebAuthn: setup complete")

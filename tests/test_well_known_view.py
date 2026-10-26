@@ -55,7 +55,6 @@ async def test_well_known_view_registered_only_with_related_origins():
         patch("custom_components.webauthn_mfa.WebAuthnStore.async_load", AsyncMock()),
         patch("custom_components.webauthn_mfa._inject_login_script", AsyncMock()),
         patch("custom_components.webauthn_mfa.panel_module.async_setup", AsyncMock()),
-        patch("custom_components.webauthn_mfa.add_extra_js_url"),
     ):
         await async_setup_entry(hass, entry_same_site)
 
@@ -74,7 +73,6 @@ async def test_well_known_view_registered_only_with_related_origins():
         patch("custom_components.webauthn_mfa.WebAuthnStore.async_load", AsyncMock()),
         patch("custom_components.webauthn_mfa._inject_login_script", AsyncMock()),
         patch("custom_components.webauthn_mfa.panel_module.async_setup", AsyncMock()),
-        patch("custom_components.webauthn_mfa.add_extra_js_url"),
     ):
         await async_setup_entry(hass, entry_multi)
 
